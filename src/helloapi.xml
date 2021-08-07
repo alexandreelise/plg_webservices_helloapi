@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="webservices" method="upgrade">
+	<name>PLG_WEBSERVICES_HELLOAPI</name>
+	<creationDate>2021-08-07</creationDate>
+	<author>Alexandre ELISÉ</author>
+	<authorEmail>contact@alexandre-elise.fr</authorEmail>
+	<authorUrl>Alexandre ELISÉ</authorUrl>
+	<copyright>Copyright(c) 2009 - 2021 Alexandre ELISÉ. All rights reserved</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>Alexandre ELISÉ</version>
+	<description>PLG_WEBSERVICES_HELLOAPI_XML_DESCRIPTION</description>
+
+	<!-- Scripts to run on installation -->
+	<scriptfile>script.php</scriptfile>
+
+	<!-- Plugin files -->
+	<files>
+		<filename plugin="helloapi">helloapi.php</filename>
+		<filename>LICENSE</filename>
+		<folder>language</folder>
+	</files>
+
+	<!-- Update servers -->
+	<updateservers>
+		<server type="extension" priority="1" name="helloapi">https://www.example.com/plg_webservices_helloapi.xml</server>
+	</updateservers>
+</extension>
