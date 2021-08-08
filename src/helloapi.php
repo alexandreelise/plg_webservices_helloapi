@@ -1,7 +1,7 @@
 <?php
 /**
  * Web Services - Helloapi
- * 
+ *
  * @package    Helloapi
  *
  * @author     Alexandre ELISÉ <contact@alexandre-elise.fr>
@@ -17,7 +17,7 @@ use Joomla\CMS\Router\ApiRouter;
 use Joomla\Router\Route;
 
 /**
- * Web Services adapter for com_example.
+ * Web Services adapter for com_helloapis.
  *
  * @since  4.0.0
  */
@@ -32,7 +32,7 @@ class PlgWebservicesHelloapi extends CMSPlugin
 	protected $autoloadLanguage = true;
 
 	/**
-	 * Registers com_example's API's routes in the application
+	 * Registers com_helloapis's API's routes in the application
 	 *
 	 * @param   ApiRouter  &$router  The API Routing object
 	 *
@@ -43,15 +43,15 @@ class PlgWebservicesHelloapi extends CMSPlugin
 	public function onBeforeApiRoute(&$router)
 	{
 		$router->createCRUDRoutes(
-			'v1/helloapi/helloapi',
-			'helloapi',
-			['component' => 'com_example']
+			'v1/helloapis/helloapis',
+			'helloapis',
+			['component' => 'com_helloapis']
 		);
 
 		$router->createCRUDRoutes(
-			'v1/helloapi/categories',
+			'v1/helloapis/categories',
 			'categories',
-			['component' => 'com_categories', 'extension' => 'com_example']
+			['component' => 'com_categories', 'extension' => 'com_helloapis']
 		);
 
 		$this->createFieldsRoutes($router);
@@ -71,27 +71,27 @@ class PlgWebservicesHelloapi extends CMSPlugin
 	private function createFieldsRoutes(&$router)
 	{
 		$router->createCRUDRoutes(
-			'v1/fields/helloapi/helloapi',
+			'v1/fields/helloapis/helloapis',
 			'fields',
-			['component' => 'com_fields', 'context' => 'com_example.helloapi']
+			['component' => 'com_fields', 'context' => 'com_helloapis.helloapis']
 		);
 
 		$router->createCRUDRoutes(
-			'v1/fields/helloapi/categories',
+			'v1/fields/helloapis/categories',
 			'fields',
-			['component' => 'com_fields', 'context' => 'com_example.categories']
+			['component' => 'com_fields', 'context' => 'com_helloapis.categories']
 		);
 
 		$router->createCRUDRoutes(
-			'v1/fields/groups/helloapi/helloapi',
+			'v1/fields/groups/helloapis/helloapis',
 			'groups',
-			['component' => 'com_fields', 'context' => 'com_example.helloapi']
+			['component' => 'com_fields', 'context' => 'com_helloapis.helloapis']
 		);
 
 		$router->createCRUDRoutes(
-			'v1/fields/groups/helloapi/categories',
+			'v1/fields/groups/helloapis/categories',
 			'groups',
-			['component' => 'com_fields', 'context' => 'com_example.categories']
+			['component' => 'com_fields', 'context' => 'com_helloapis.categories']
 		);
 	}
 
@@ -108,15 +108,15 @@ class PlgWebservicesHelloapi extends CMSPlugin
 	{
 		$defaults    = [
 			'component'  => 'com_contenthistory',
-			'type_alias' => 'com_example.helloapi',
+			'type_alias' => 'com_helloapis.helloapi',
 			'type_id'    => 1,
 		];
 		$getDefaults = array_merge(['public' => false], $defaults);
 
 		$routes = [
-			new Route(['GET'], 'v1/helloapi/helloapi/:id/contenthistory', 'history.displayList', ['id' => '(\d+)'], $getDefaults),
-			new Route(['PATCH'], 'v1/helloapi/helloapi/:id/contenthistory/keep', 'history.keep', ['id' => '(\d+)'], $defaults),
-			new Route(['DELETE'], 'v1/helloapi/helloapi/:id/contenthistory', 'history.delete', ['id' => '(\d+)'], $defaults),
+			new Route(['GET'], 'v1/helloapis/helloapis/:id/contenthistory', 'history.displayList', ['id' => '(\d+)'], $getDefaults),
+			new Route(['PATCH'], 'v1/helloapis/helloapis/:id/contenthistory/keep', 'history.keep', ['id' => '(\d+)'], $defaults),
+			new Route(['DELETE'], 'v1/helloapis/helloapis/:id/contenthistory', 'history.delete', ['id' => '(\d+)'], $defaults),
 		];
 
 		$router->addRoutes($routes);
