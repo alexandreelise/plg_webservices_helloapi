@@ -1,6 +1,6 @@
 # Web Services - Helloapi
 
-> English: Joomla! 4 webservices plugin to add routes for Helloapi component allowing to access it from external systems.
+> English: Joomla! 4 Web Services plugin to add routes for Helloapi component allowing to access it from external systems.
 > Français: Plugin webservices pour Joomla! 4 qui ajoute des routes pour le composant Helloapi permettant ainsi d'y accéder depuis un système externe.
 
 --------------------------------------------
